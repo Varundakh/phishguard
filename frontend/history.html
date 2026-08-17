@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan History - PhishGuard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🛡️ PhishGuard</h1>
+                <p class="tagline">Scan History</p>
+            </div>
+            <nav class="nav">
+                <a href="/" class="nav-link">Analyzer</a>
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/history" class="nav-link active">History</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Search and Filter Section -->
+            <section class="filter-section">
+                <div class="card">
+                    <h2>Search & Filter</h2>
+                    <div class="filter-controls">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search by URL..."
+                            class="input"
+                        />
+                        <select id="riskFilter" class="input">
+                            <option value="">All Risk Levels</option>
+                            <option value="LOW">Safe (Low)</option>
+                            <option value="MODERATE">Moderate Risk</option>
+                            <option value="SUSPICIOUS">Suspicious</option>
+                            <option value="HIGH">High Risk</option>
+                        </select>
+                        <button id="clearHistoryBtn" class="btn btn-danger">Clear History</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scan History Table -->
+            <section class="history-section">
+                <div class="card">
+                    <h2>Recent Scans</h2>
+                    <div id="loadingState" class="loading-state" style="display: none;">
+                        <div class="spinner-large"></div>
+                        <p>Loading scan history...</p>
+                    </div>
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <p>No scans found</p>
+                    </div>
+                    <table id="scansTable" class="scans-table">
+                        <thead>
+                            <tr>
+                                <th>URL</th>
+                                <th>Risk Level</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scansTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section class="pagination-section" id="paginationSection" style="display: none;">
+                <button id="prevBtn" class="btn btn-secondary">Previous</button>
+                <span id="pageInfo">Page 1</span>
+                <button id="nextBtn" class="btn btn-secondary">Next</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 PhishGuard - Cybersecurity Educational Project</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/history.js"></script>
+</body>
+</html>

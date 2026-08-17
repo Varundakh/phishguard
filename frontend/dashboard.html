@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PhishGuard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🛡️ PhishGuard</h1>
+                <p class="tagline">Dashboard & Statistics</p>
+            </div>
+            <nav class="nav">
+                <a href="/" class="nav-link">Analyzer</a>
+                <a href="/dashboard" class="nav-link active">Dashboard</a>
+                <a href="/history" class="nav-link">History</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Statistics Section -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <!-- Total Scans Card -->
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <p class="stat-label">Total Scans</p>
+                            <p id="totalScans" class="stat-value">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Safe Scans Card -->
+                    <div class="stat-card safe">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <p class="stat-label">Safe</p>
+                            <p id="safeScans" class="stat-value">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Moderate Scans Card -->
+                    <div class="stat-card moderate">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-content">
+                            <p class="stat-label">Moderate</p>
+                            <p id="moderateScans" class="stat-value">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Suspicious Scans Card -->
+                    <div class="stat-card suspicious">
+                        <div class="stat-icon">🚨</div>
+                        <div class="stat-content">
+                            <p class="stat-label">Suspicious</p>
+                            <p id="suspiciousScans" class="stat-value">0</p>
+                        </div>
+                    </div>
+
+                    <!-- High Risk Scans Card -->
+                    <div class="stat-card high-risk">
+                        <div class="stat-icon">🔴</div>
+                        <div class="stat-content">
+                            <p class="stat-label">High Risk</p>
+                            <p id="highRiskScans" class="stat-value">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Average Score Card -->
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <p class="stat-label">Average Score</p>
+                            <p id="avgScore" class="stat-value">0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Risk Distribution Chart -->
+            <section class="chart-section">
+                <div class="card">
+                    <h2>Risk Level Distribution</h2>
+                    <div id="riskChart" class="chart">
+                        <div class="chart-bar">
+                            <div class="bar-label">Safe</div>
+                            <div class="bar-container">
+                                <div id="safeBar" class="bar safe-bar"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">Moderate</div>
+                            <div class="bar-container">
+                                <div id="moderateBar" class="bar moderate-bar"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">Suspicious</div>
+                            <div class="bar-container">
+                                <div id="suspiciousBar" class="bar suspicious-bar"></div>
+                            </div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">High Risk</div>
+                            <div class="bar-container">
+                                <div id="highRiskBar" class="bar high-risk-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 PhishGuard - Cybersecurity Educational Project</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

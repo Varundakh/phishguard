@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard - Phishing URL Analyzer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🛡️ PhishGuard</h1>
+                <p class="tagline">Intelligent Phishing URL & Website Risk Analyzer</p>
+            </div>
+            <nav class="nav">
+                <a href="/" class="nav-link active">Analyzer</a>
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/history" class="nav-link">History</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Analyzer Section -->
+            <section class="analyzer-section">
+                <div class="card analyzer-card">
+                    <h2>URL Analysis Engine</h2>
+                    <p class="description">Enter a URL below to analyze its phishing risk level</p>
+
+                    <form id="analyzerForm" class="form">
+                        <div class="form-group">
+                            <label for="urlInput">URL:</label>
+                            <input
+                                type="text"
+                                id="urlInput"
+                                name="url"
+                                placeholder="https://example.com"
+                                required
+                                class="input"
+                            />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span id="btnText">Analyze URL</span>
+                            <span id="btnSpinner" class="spinner" style="display: none;"></span>
+                        </button>
+                    </form>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="loading-state" style="display: none;">
+                        <div class="spinner-large"></div>
+                        <p>Analyzing URL...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="errorState" class="error-state" style="display: none;">
+                        <p id="errorMessage"></p>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div id="resultsSection" class="results-section" style="display: none;">
+                    <!-- Risk Score Card -->
+                    <div class="card result-card">
+                        <div class="result-header">
+                            <h2>Risk Assessment</h2>
+                            <span id="riskBadge" class="risk-badge"></span>
+                        </div>
+
+                        <div class="score-container">
+                            <div class="score-circle">
+                                <span id="riskScore" class="score-number">0</span>
+                                <span class="score-max">/100</span>
+                            </div>
+                            <div class="score-info">
+                                <p id="riskLevel" class="risk-level"></p>
+                                <p id="riskCategory" class="risk-category"></p>
+                            </div>
+                        </div>
+
+                        <!-- Risk Gauge -->
+                        <div class="gauge">
+                            <div id="gaugeBar" class="gauge-bar"></div>
+                        </div>
+
+                        <!-- Indicators -->
+                        <div class="indicators-section">
+                            <h3>Detected Indicators</h3>
+                            <ul id="indicatorsList" class="indicators-list"></ul>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations Card -->
+                    <div class="card recommendation-card">
+                        <h3>Security Recommendation</h3>
+                        <p id="recommendationText" class="recommendation-text"></p>
+                    </div>
+
+                    <!-- Technical Details Card -->
+                    <div class="card technical-card">
+                        <h3>Technical Analysis</h3>
+                        <div id="technicalDetails" class="technical-details"></div>
+                    </div>
+
+                    <!-- Scoring Breakdown -->
+                    <div class="card breakdown-card">
+                        <h3>Scoring Breakdown</h3>
+                        <div id="scoringBreakdown" class="scoring-breakdown"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 PhishGuard - Cybersecurity Educational Project</p>
+            <p>Never enter sensitive information on URLs you're unsure about</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
